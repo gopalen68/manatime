@@ -9,10 +9,7 @@
     "lint": "next lint",
     "postinstall": "husky install"
   },
-  "lint-staged": {
-    "**/*.{js,jsx,ts,tsx}": ["eslint --fix", "prettier --config ./.prettierrc.js --write"],
-    "**/*.{css,scss,md,html,json}": ["prettier --config ./.prettierrc.js --write"]
-  },
+  
   "dependencies": {
     "@types/node": "20.2.5",
     "@types/react": "18.2.8",
