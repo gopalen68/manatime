@@ -1,20 +1,12 @@
+'use client';
+
 import Image from 'next/image';
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 z-50 w-screen h-16 bg-white border-b border-gray-200">
+    <nav className="fixed top-0 left-[200px] z-40 w-[calc(100%-200px)] h-16 bg-white border-b border-gray-200">
       <div className="py-3">
         <div className="flex items-center">
-          <div className="flex w-[200px] items-center justify-center">
-            <a href="#" className="flex items-center">
-              <Image
-                src="/img/Burgerbutton.svg"
-                width={32}
-                height={32}
-                alt="Burger Menu"
-              />
-            </a>
-          </div>
           <div className="flex w-full justify-between items-center">
             <div className="flex items-center justify-items-start ml-[30px] space-x-[30px] font-poppins">
               <Image

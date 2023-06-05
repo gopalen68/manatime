@@ -15,8 +15,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-['Roboto'] bg-manatime_light_grey">
-        <Navbar />
         <Sidebar />
+        <Navbar />
         <main>{children}</main>
       </body>
     </html>
