@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Drawer from './Drawer';
+import Link from 'next/link';
 
 export default function Sidebar() {
   const [open, setOpen] = useState<boolean | undefined>(false);
@@ -28,36 +29,39 @@ export default function Sidebar() {
               </div>
             </li>
             <li className="bg-manatime_light_blue pl-5 border-b-2 border-manatime_border_grey">
-              <a href="#" className="flex h-16 items-center p-2 text-white">
+              <Link href="#" className="flex h-16 items-center p-2 text-white">
                 <Image
                   src="/img/Accueil.svg"
                   className="h-8 mr-3"
                   width={22}
                   height={22}
-                  alt="Accueil Icone"
+                  alt="Accueil"
                 />
                 <span className="ml-3 font-poppins text-lg">Accueil</span>
-              </a>
+              </Link>
             </li>
             <li className="bg-manatime_light_blue pl-5 border-b-2 border-manatime_border_grey">
-              <a href="#" className="flex h-16 items-center p-2 text-white">
+              <Link
+                href="/form"
+                className="flex h-16 items-center p-2 text-white"
+              >
                 <Image
                   src="/img/Add.svg"
                   className="h-8 mr-3"
                   width={22}
                   height={22}
-                  alt="Accueil Icone"
+                  alt="Ajouter"
                 />
                 <span className="ml-3 font-poppins text-lg">Ajouter</span>
-              </a>
+              </Link>
             </li>
             <li className="pl-5 border-b-2 border-manatime_border_blue">
-              <a href="#" className="flex h-16 items-center p-2 text-white">
+              <Link href="#" className="flex h-16 items-center p-2 text-white">
                 <Image
                   src="/img/Monespace.svg"
                   width={22}
                   height={22}
-                  alt="Accueil Icone"
+                  alt="Mon espace"
                 />
                 <span className="ml-3 font-poppins text-base">Mon espace</span>
                 <Image
@@ -67,15 +71,15 @@ export default function Sidebar() {
                   height={7}
                   alt="Stripe Icone"
                 />
-              </a>
+              </Link>
             </li>
             <li className="pl-5 border-b-2 border-manatime_border_blue">
-              <a href="#" className="flex h-16 items-center p-2 text-white">
+              <Link href="#" className="flex h-16 items-center p-2 text-white">
                 <Image
                   src="/img/Validation.svg"
                   width={22}
                   height={22}
-                  alt="Accueil Icone"
+                  alt="Validation"
                 />
                 <span className="ml-3 font-poppins text-base">Validation</span>
                 <Image
@@ -85,15 +89,15 @@ export default function Sidebar() {
                   height={7}
                   alt="Stripe Icone"
                 />
-              </a>
+              </Link>
             </li>
             <li className="pl-5 border-b-2 border-manatime_border_blue">
-              <a href="#" className="flex h-16 items-center p-2 text-white">
+              <Link href="#" className="flex h-16 items-center p-2 text-white">
                 <Image
                   src="/img/Indicateurs.svg"
                   width={22}
                   height={22}
-                  alt="Accueil Icone"
+                  alt="Indicateurs"
                 />
                 <span className="ml-3 font-poppins text-base">Indicateurs</span>
                 <Image
@@ -103,69 +107,69 @@ export default function Sidebar() {
                   height={7}
                   alt="Stripe Icone"
                 />
-              </a>
+              </Link>
             </li>
             <li className="pl-5 bg-white border-b-2 border-manatime_border_blue">
-              <a href="#" className="flex h-16 items-center p-2 text-white">
+              <Link href="#" className="flex h-16 items-center p-2 text-white">
                 <Image
-                  src="/img/Soldes.svg"
+                  src="/img/Soldes_Rev.svg"
                   width={22}
                   height={22}
-                  alt="Accueil Icone"
+                  alt="Soldes"
                 />
                 <span className="ml-3 font-poppins text-base text-manatime_dark_blue">
                   Soldes
                 </span>
                 <Image
-                  src="/img/Stripe.svg"
+                  src="/img/Stripe_Down.svg"
                   className="absolute right-0 mr-3 rotate-180"
                   width={11}
                   height={7}
                   alt="Stripe Icone"
                 />
-              </a>
+              </Link>
               <ul id="dropdown" className=" py-2 space-y-2 bg-white">
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    href="/"
                     className="flex w-full p-2 text-manatime_mid_blue text-base font-roboto transition duration-75"
                   >
                     Gestion des soldes
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="#"
                     className="flex w-full p-2 text-manatime_dark_grey text-base font-roboto transition duration-75"
                   >
                     Ajuster un solde
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="#"
                     className="flex w-full p-2 text-manatime_dark_grey text-base font-roboto transition duration-75"
                   >
                     Compteurs
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="#"
                     className="flex w-full p-2 text-manatime_dark_grey text-base font-roboto transition duration-75"
                   >
                     Historique
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </li>
             <li className="pl-5 border-b-2 border-manatime_border_blue">
-              <a href="#" className="flex h-16 items-center p-2 text-white">
+              <Link href="#" className="flex h-16 items-center p-2 text-white">
                 <Image
                   src="/img/Recherche.svg"
                   width={22}
                   height={22}
-                  alt="Accueil Icone"
+                  alt="Recherche"
                 />
                 <span className="ml-3 font-poppins text-base">Recherche</span>
                 <Image
@@ -175,10 +179,10 @@ export default function Sidebar() {
                   height={7}
                   alt="Stripe Icone"
                 />
-              </a>
+              </Link>
             </li>
           </ul>
-          <div className="absolute bottom-0 left-0 h-72 pb-4 bg-red-400">
+          <div className="absolute bottom-0 left-0 h-72 pb-4">
             <Image src="/img/Graphic.svg" fill={true} alt="Graphic Manatime" />
           </div>
         </div>

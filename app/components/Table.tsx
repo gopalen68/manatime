@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 
 const ManatimeDataHeader = [
@@ -31,118 +33,7 @@ const ManatimeDataHeader = [
   }
 ];
 
-const ManatimeData = [
-  {
-    id: 1,
-    utilisateurs: 'Darléne Menson Dujon',
-    categorie: true,
-    periode: '2020-2021',
-    solde_actuel: '16',
-    solde_pris: '10',
-    solde_futur: '34'
-  },
-  {
-    id: 2,
-    utilisateurs: 'Marlon Brandon',
-    categorie: false,
-    periode: '2020',
-    solde_actuel: '3',
-    solde_pris: '25',
-    solde_futur: '20'
-  },
-  {
-    id: 3,
-    utilisateurs: 'Darléne Menson Dujon',
-    categorie: true,
-    periode: '2020-2021',
-    solde_actuel: '16',
-    solde_pris: '10',
-    solde_futur: '34'
-  },
-  {
-    id: 4,
-    utilisateurs: 'Marlon Brandon',
-    categorie: false,
-    periode: '2020',
-    solde_actuel: '3',
-    solde_pris: '25',
-    solde_futur: '20'
-  },
-  {
-    id: 5,
-    utilisateurs: 'Darléne Menson Dujon',
-    categorie: true,
-    periode: '2020-2021',
-    solde_actuel: '16',
-    solde_pris: '10',
-    solde_futur: '34'
-  },
-  {
-    id: 6,
-    utilisateurs: 'Marlon Brandon',
-    categorie: false,
-    periode: '2020',
-    solde_actuel: '3',
-    solde_pris: '25',
-    solde_futur: '20'
-  },
-  {
-    id: 7,
-    utilisateurs: 'Darléne Menson Dujon',
-    categorie: true,
-    periode: '2020',
-    solde_actuel: '16',
-    solde_pris: '10',
-    solde_futur: '34'
-  },
-  {
-    id: 8,
-    utilisateurs: 'Marlon Brandon',
-    categorie: false,
-    periode: '2020',
-    solde_actuel: '3',
-    solde_pris: '25',
-    solde_futur: '20'
-  },
-  {
-    id: 9,
-    utilisateurs: 'Darléne Menson Dujon',
-    categorie: true,
-    periode: '2020-2021',
-    solde_actuel: '16',
-    solde_pris: '10',
-    solde_futur: '34'
-  },
-  {
-    id: 10,
-    utilisateurs: 'Marlon Brandon',
-    categorie: false,
-    periode: '2020',
-    solde_actuel: '3',
-    solde_pris: '25',
-    solde_futur: '20'
-  },
-  {
-    id: 11,
-    utilisateurs: 'Darléne Menson Dujon',
-    categorie: true,
-    periode: '2020',
-    solde_actuel: '16',
-    solde_pris: '10',
-    solde_futur: '34'
-  },
-  {
-    id: 12,
-    utilisateurs: 'Marlon Brandon',
-    categorie: false,
-    periode: '2020',
-    solde_actuel: '3',
-    solde_pris: '25',
-    solde_futur: '20'
-  }
-];
-
-export default function Table() {
+export default function Table({ data, removeData }) {
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-[4px]">
       <table className="w-full text-sm text-left">
@@ -153,7 +44,7 @@ export default function Table() {
                 <th
                   key={index}
                   scope="col"
-                  className={`px-4 py-4 w-[${value.width}] h-[38px]`}
+                  className={`border-table w-[${value.width}] h-[38px]`}
                 >
                   {value.titre}
                 </th>
@@ -162,7 +53,7 @@ export default function Table() {
           </tr>
         </thead>
         <tbody className="font-roboto text-base">
-          {ManatimeData.map((value, index) => {
+          {data.map((value, index) => {
             return (
               <tr
                 key={index}
@@ -170,8 +61,10 @@ export default function Table() {
                   index % 2 === 0 ? 'bg-manatime_mid_grey' : 'bg-white'
                 } border-b`}
               >
-                <td className="px-4 py-4">{value.utilisateurs}</td>
-                <td className="px-4 py-4">
+                <td className="px-4 py-4 w-[450px] border border-[#C4C4C4]">
+                  {value.utilisateurs}
+                </td>
+                <td className="px-4 py-4 w-[450px] border border-[#C4C4C4]">
                   <div className="flex flex-row items-center">
                     {value.categorie ? (
                       <>
@@ -186,30 +79,34 @@ export default function Table() {
                     )}
                   </div>
                 </td>
-                <td className="px-4 py-4">{value.periode}</td>
-                <td className="px-4 py-4">{value.solde_actuel}</td>
-                <td className="px-4 py-4">{value.solde_pris}</td>
-                <td className="px-4 py-4">{value.solde_futur}</td>
+                <td className="w-[120px] border-table">{value.periode}</td>
+                <td className="w-[120px] border-table">{value.solde_actuel}</td>
+                <td className="w-[120px] border-table">{value.solde_pris}</td>
+                <td className="w-[120px] border-table">{value.solde_futur}</td>
 
-                <td className="px-4 py-[3px]">
+                <td className="px-4 py-[3px] w-[270px] border border-[#C4C4C4]">
                   <div className="flex flex-row mx-10 space-x-10">
                     <Image
                       alt=""
+                      className="cursor-pointer"
                       width={32}
                       height={32}
                       src="/img/Ajuster.svg"
                     />
                     <Image
                       alt=""
+                      className="cursor-pointer"
                       width={32}
                       height={32}
                       src="/img/Transferer.svg"
                     />
                     <Image
                       alt=""
+                      className="cursor-pointer"
                       width={32}
                       height={32}
                       src="/img/Solder.svg"
+                      onClick={() => removeData(value.id)}
                     />
                   </div>
                 </td>
