@@ -29,3 +29,8 @@ npm run dev
 ```
 
 - Accédez le lien [http://localhost:3000](http://localhost:3000) avec votre navigateur pour voir le résultat.
+
+
+## Cliquez sur l'icône "Burger Menu" pour voir le drawer.
+## Cliquez sur "+ Ajouter" du sidebar, pour voir le formulaire.
+## Cliquez sur le bouton rouge pour supprimer une ligne du tableau.
