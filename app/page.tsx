@@ -139,7 +139,7 @@ export default function Home() {
     <div className="p-7 sm:ml-52">
       <div className="mt-14">
         <Table data={data} removeData={removeData} />
-        <Form addData={addData}/>
+        <Form addData={addData} />
       </div>
     </div>
   );

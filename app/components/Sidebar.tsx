@@ -4,9 +4,11 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Drawer from './Drawer';
 import Link from 'next/link';
+import { useGlobalContext } from '../Context/store';
 
 export default function Sidebar() {
   const [open, setOpen] = useState<boolean | undefined>(false);
+  const { openForm, setOpenForm } = useGlobalContext();
   return (
     <>
       <Drawer open={open} setOpen={setOpen} />
@@ -42,8 +44,9 @@ export default function Sidebar() {
             </li>
             <li className="bg-manatime_light_blue pl-5 border-b-2 border-manatime_border_grey">
               <Link
-                href="/form"
+                href="/"
                 className="flex h-16 items-center p-2 text-white"
+                onClick={() => setOpenForm(!openForm)}
               >
                 <Image
                   src="/img/Add.svg"
@@ -51,6 +54,7 @@ export default function Sidebar() {
                   width={22}
                   height={22}
                   alt="Ajouter"
+                  // onClick={() => setOpenForm(!openForm)}
                 />
                 <span className="ml-3 font-poppins text-lg">Ajouter</span>
               </Link>

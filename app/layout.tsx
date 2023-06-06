@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
+import { GlobalContextProvider } from './Context/store';
 import './globals.css';
 
 export const metadata = {
@@ -15,9 +16,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-['Roboto'] bg-manatime_light_grey">
-        <Sidebar />
-        <Navbar />
-        <main>{children}</main>
+        <GlobalContextProvider>
+          <Sidebar />
+          <Navbar />
+          <main>{children}</main>
+        </GlobalContextProvider>
       </body>
     </html>
   );
